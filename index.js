@@ -27,7 +27,14 @@ app.get("/", function(req, res ){
 	res.render("/index.html");
 });
 
-
+app.post('/drop', function(){
+	db.Weather.remove({}, function(err, data){
+		if (err){
+			throw err
+		}
+		console.log("done")
+	});
+});
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');

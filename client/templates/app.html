@@ -1,11 +1,16 @@
 <div><br>
-   <div class="well container-fluied" Cities="$scope.Cities">
-    <h1 style="font-size: 60px;font-family: Gugi">Enter The Name Of The City</h1><br><br>
-    <input id="txt" type="text"  style="height:60px;width:820px;font-size: 35px;font-family: Indie Flower"  class="form-control form-control-lg"  placeholder="City Name" ng-model="name"><br><br>
-    <input id="btn"style="height:70px;width:220px;font-size: 40px;font-family: Geo" class="btn btn-success" type="submit" value="Submit" ng-click='$ctrl.ShowWeather(name)'><br><br><br>
-    <div>
-    <h3 ng-repeat="City in Cities | limitTo : 7">City: {{City.CityName}}, Weather: {{City.Weather}}, Temperature: {{City.Temperature}} K, WindSpeed: {{City.WindSpeed}} mph, Humidity: {{City.Humidity}}%.</h3>
+   <div class="container-fluied" Cities="$ctrl.Cities">
+    <h1 style="font-size: 70px;font-family: Gugi">Enter The Name Of The City</h1><br>
+    <input id="txt" type="text"  style="height:90px;width:900px;font-size: 45px;font-family: Indie Flower; color: red"  class="form-control form-control-lg"  placeholder="City Name" ng-model="name"><br><br>
+
+    <input style="height:100px;width:220px;font-size: 60px;font-family: Geo" class="btn btn-success" type="submit" value="Submit" ng-click='$ctrl.ShowWeather(name)'>
+    <div><br>
+
+    	<button style="height:100px;width:220px;font-size: 60px;font-family: Geo" class="btn btn-danger" ng-click="$ctrl.clear()">Clear</button><br><br>
+    	<hr class="hr">
+
+    <h3 ng-repeat="City in Cities | limitTo : 4" style="font-family: Do Hyeon; color: #DAE1E1; font-size: 40px">City: {{City.CityName}}, Weather: {{City.Weather}}, Temperature: {{City.Temperature}} K, WindSpeed: {{City.WindSpeed}} mph, Humidity: {{City.Humidity}}%.</h3>
+
 	</div>
   </div>
 </div>
-<render Cities="$scope.Cities"/>

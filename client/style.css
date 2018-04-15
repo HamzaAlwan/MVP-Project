@@ -1,0 +1,10 @@
+hr.hr { 
+  display: block; 
+  content: ""; 
+  height: 35px; 
+  margin-top: 10px; 
+  border-style: solid; 
+  border-color: #999999; 
+  border-width: 5px 0 0 0; 
+  border-radius: 20px;
+} 
