@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('AppCtrl', function($http) {
+.controller('AppCtrl', function($scope, $http) {
 	this.ShowWeather =(cityname) =>{
 		$http({
 			method: 'POST',
@@ -13,14 +13,16 @@ angular.module('app')
 			method: 'GET',
 			url: '/data'
 		}).then(function Done(res) {
-        	this.Cities = res.data;
-        	console.log(this.Cities)
+        	$scope.Cities = res.data;
+        	console.log($scope.Cities)
      },   function Err(res) {
-       		 this.Cities = res.statusText;
+       		 $scope.Cities = res.statusText;
 		});
 })
 .component('app', {
-  bindings: {},
+  bindings: {
+  	Cities: '<'
+  },
   controller: 'AppCtrl',
   templateUrl: '/templates/app.html'
 });

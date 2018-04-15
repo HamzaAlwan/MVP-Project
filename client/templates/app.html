@@ -1,7 +1,11 @@
-<div>
-   <div class="well container">
-    <h1 style="font-size: 60px;font-family: Gugi">Enter The Name Of The City</h1>
-    <input id="txt" type="text"  style="height:60px;width:820px;font-size: 35px;font-family: Indie Flower"  class="form-control form-control-lg"  placeholder="City Name" ng-model="name"><br>
-    <input id="btn"style="height:70px;width:220px;font-size: 40px;font-family: Geo" class="btn btn-success" type="submit" value="Submit" ng-click='$ctrl.ShowWeather(name)'>
+<div><br>
+   <div class="well container-fluied" Cities="$scope.Cities">
+    <h1 style="font-size: 60px;font-family: Gugi">Enter The Name Of The City</h1><br><br>
+    <input id="txt" type="text"  style="height:60px;width:820px;font-size: 35px;font-family: Indie Flower"  class="form-control form-control-lg"  placeholder="City Name" ng-model="name"><br><br>
+    <input id="btn"style="height:70px;width:220px;font-size: 40px;font-family: Geo" class="btn btn-success" type="submit" value="Submit" ng-click='$ctrl.ShowWeather(name)'><br><br><br>
+    <div>
+    <h3 ng-repeat="City in Cities | limitTo : 7">City: {{City.CityName}}, Weather: {{City.Weather}}, Temperature: {{City.Temperature}} K, WindSpeed: {{City.WindSpeed}} mph, Humidity: {{City.Humidity}}%.</h3>
+	</div>
   </div>
 </div>
+<render Cities="$scope.Cities"/>
