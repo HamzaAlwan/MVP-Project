@@ -12,12 +12,16 @@ app.use(express.static(__dirname + '/node_modules'));
 
 app.post('/data', function (req, res){
 	helper.getWeatherByCityName(req.body.name, function(err, data){
-		console.log(data)
 		db.saveWeather(data)
-	})
-	console.log(req.body);
+	});
 	res.send(req.body);
 });
+
+app.get('/data', function(req, res){
+	db.Weather.find({}, function(err, data){
+		res.send(data)
+	})
+})
 
 app.get("/", function(req, res ){
 	res.render("/index.html");

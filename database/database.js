@@ -37,3 +37,4 @@ var saveWeather = function (data){
 
 
 module.exports.saveWeather = saveWeather;
+module.exports.Weather = Weather
